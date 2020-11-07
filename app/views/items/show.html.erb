@@ -10,5 +10,5 @@
   <%= @item.completed_at %>
 </p>
 
-<%= link_to 'Изменить', edit_item_path(@item) %> |
-<%= link_to 'Назад', items_path %>
+<%= link_to 'Изменить', edit_item_path(@item), class: 'btn right' %> |
+<%= link_to 'Назад', items_path, class: 'btn right' %>

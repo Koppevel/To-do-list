@@ -14,19 +14,19 @@
   <tbody>
     <% @pending_items.each do |item| %>
       <tr>
-        <td><%= item.title %></td>
-        <td><%= link_to 'Выполнить', complete_item_path(item), method: :post %></td>
-        <td><%= link_to 'Подробнее', item %></td>
-        <td><%= link_to 'Добавить', edit_item_path(item) %></td>
+        <td><h6><%= item.title %></h6></td>
+        <td><%= link_to 'Выполнить', complete_item_path(item), method: :post, class: 'btn red darken-4' %></td>
+        <td><%= link_to 'SHOW', item, class: 'btn deep-purple'%></td>
+        <td><%= link_to 'EDIT', edit_item_path(item), class: 'btn green accent-4' %></td>
       </tr>
     <% end %>
-  <tr><td>-------------- Выполненные дела снизу --------------</td></tr>
+
     <% @completed_items.each do |item| %>
     <tr>
       <td><%= item.title %></td>
-      <td><%= item.completed_at %></td>
-      <td><%= link_to 'Подробнее', item %></td>
-      <td><%= link_to 'Добавить', edit_item_path(item) %></td>
+      <td><%= item.completed_at.strftime('%d.%m.%Y в %H:%M') %></td>
+      <td><%= link_to 'SHOW', item, class: 'btn deep-purple' %></td>
+      <td><%= link_to 'EDIT', edit_item_path(item), class: 'btn green accent-4' %></td>
     </tr>
   <% end %>
   </tbody>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'Новая задача', new_item_path %>
+<%= link_to 'Новая задача', new_item_path, class: 'btn right' %>
