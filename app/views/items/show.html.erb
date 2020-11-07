@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @item.title %>
+</p>
+
+<p>
+  <strong>Completed at:</strong>
+  <%= @item.completed_at %>
+</p>
+
+<%= link_to 'Изменить', edit_item_path(@item) %> |
+<%= link_to 'Назад', items_path %>
